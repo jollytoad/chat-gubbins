@@ -1,0 +1,60 @@
+:root {
+  --line-length: 60rem;
+}
+
+html, body {
+  height: 100%;
+}
+
+body > header {
+  grid-area: header;
+}
+body > main {
+  grid-area: content;
+  overflow: auto;
+}
+body > footer {
+  grid-area: footer;
+}
+
+body > * {
+  border: 1px solid blue;
+  margin: 0;
+  max-width: none;
+}
+
+body > header {
+  display: flex;
+  justify-content: space-between;
+}
+
+body {
+  display: grid;
+  grid-template:
+    "header" min-content
+    "content" 1fr
+    "footer" min-content;
+}
+
+chat-author {
+  display: block;
+  margin: 1ex 0;
+}
+
+chat-prompt {
+  display: block;
+  margin: 1ex 0;
+}
+
+chat-generated {
+  display: block;
+  margin: 1ex 0;
+}
+
+chat-chunk {
+  display: inline;
+}
+
+chat-generated::after {
+  --ahx-slot-name: "chat-append";
+}
